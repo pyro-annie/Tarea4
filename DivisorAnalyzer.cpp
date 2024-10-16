@@ -9,6 +9,16 @@ using namespace std; // Para evitar escribir "std::" antes de cada función del 
 const int MAX_DIVISORES = 5;          // Constante para el número máximo de divisores a mostrar
 const int CANTIDAD_NUMEROS = 20;      // Constante para la cantidad de números a generar
 
+// Códigos de color ANSI para la consola
+const string RESET = "\033[0m";       // Restablecer el color
+const string RED = "\033[31m";        // Texto rojo
+const string GREEN = "\033[32m";      // Texto verde
+const string YELLOW = "\033[33m";     // Texto amarillo
+const string BLUE = "\033[34m";       // Texto azul
+const string MAGENTA = "\033[35m";    // Texto magenta
+const string CYAN = "\033[36m";       // Texto cian
+const string WHITE = "\033[37m";      // Texto blanco
+
 // Estructura para almacenar un número y sus divisores
 struct Divisores {
     int numero;                      // Número generado
@@ -38,14 +48,14 @@ int generarNumeroAleatorio(int min, int max) {
 
 // Función para imprimir los resultados en formato de tabla
 void imprimirResultados(const Divisores numeros[], int size) {
-    cout << left << setw(10) << "Número" << " | " << setw(30) << "Divisores" << endl;
-    cout << string(45, '-') << endl;
+    cout << BLUE << left << setw(10) << "Número" << " | " << setw(30) << "Divisores" << RESET << endl; // Título de columnas en azul
+    cout << CYAN << string(45, '-') << RESET << endl; // Separador en cian
     for (int i = 0; i < size; ++i) {
-        cout << left << setw(10) << numeros[i].numero << " | ";
+        cout << GREEN << left << setw(10) << numeros[i].numero << " | "; // Números en verde
         for (int divisor : numeros[i].divisores) {
-            cout << divisor << " ";  // Imprimir cada divisor separado por un espacio
+            cout << YELLOW << divisor << " ";  // Divisores en amarillo
         }
-        cout << endl;
+        cout << RESET << endl;
     }
 }
 
@@ -53,12 +63,12 @@ void imprimirResultados(const Divisores numeros[], int size) {
 bool preguntarContinuar() {
     string continuar;                // Variable para almacenar la respuesta del usuario
     while (true) {
-        cout << "¿Deseas ejecutar el programa nuevamente? (s/n): ";
+        cout << MAGENTA << "¿Deseas ejecutar el programa nuevamente? (s/n): " << RESET; // Pregunta en magenta
         getline(cin, continuar);     // Leer la entrada completa del usuario
         if (continuar == "s" || continuar == "S" || continuar == "n" || continuar == "N") {
             break;                  // Salir del bucle si la respuesta es válida ('s' o 'n')
         } else {
-            cout << "Entrada no válida. Por favor, introduce 's' para sí o 'n' para no." << endl;
+            cout << RED << "Entrada no válida. Por favor, introduce 's' para sí o 'n' para no." << RESET << endl; // Mensaje de error en rojo
         }
     }
     return continuar == "s" || continuar == "S"; // Devolver verdadero si el usuario quiere continuar
@@ -66,6 +76,7 @@ bool preguntarContinuar() {
 
 int main() {
     Divisores numeros[CANTIDAD_NUMEROS];  // Array de estructuras Divisores
+
     do {
         for (int i = 0; i < CANTIDAD_NUMEROS; ++i) {
             numeros[i].numero = generarNumeroAleatorio(1, 100); // Generar un número aleatorio entre 1 y 100
@@ -95,9 +106,13 @@ Mejoras y novedades:
 
 5. Optimización del Código:
    - Se eliminaron librerías y variables innecesarias para hacer el código más limpio y eficiente.
-   
+
 6. Uso de Constantes:
    - Se reemplazaron valores mágicos por constantes (`MAX_DIVISORES` y `CANTIDAD_NUMEROS`) para facilitar su ajuste y mantenimiento.
+
 7. Optimización de Funciones:
    - La función `calcularDivisores` se optimizó para detenerse después de encontrar un número específico de divisores, mejorando el rendimiento.
+
+8. Colores en la salida:
+   - Se añadieron colores a la salida de la consola para hacerla más visualmente atractiva y fácil de leer.
 */
