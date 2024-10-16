@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la Simulación</title>
+</head>
+<body>
+    <h1>Resultados de la Simulación</h1>
+    <table border="1">
+        <tr>
+            <th>Distrito</th>
+            {% for j in range(candidatos) %}
+            <th>Candidato {{ j + 1 }}</th>
+            {% endfor %}
+            <th>Total Distrito</th>
+        </tr>
+        {% for i in range(votos|length) %}
+        <tr>
+            <td>{{ i + 1 }}</td>
+            {% for j in range(candidatos) %}
+            <td>{{ votos[i][j] }}</td>
+            {% endfor %}
+            <td>{{ suma_distritos[i] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>Total Candidatos</td>
+            {% for j in range(candidatos) %}
+            <td>{{ suma_candidatos[j] }}</td>
+            {% endfor %}
+            <td></td>
+        </tr>
+    </table>
+    <h2>El candidato ganador es el Candidato {{ candidato_ganador + 1 }} con {{ max_votos }} votos.</h2>
+    <a href="{{ url_for('index') }}">Volver</a>
+</body>
+</html>
