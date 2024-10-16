@@ -74,14 +74,14 @@ def disparar(tablero_enemigo, fila, columna):
     else:
         barco = tablero_enemigo[fila][columna]
         tablero_enemigo[fila][columna] = 'T'
-        if not any(celda == barco for fila in tablero_enemigo for celda en fila):
+        if not any(celda == barco for fila in tablero_enemigo for celda in fila):
             print(f"¡Hundiste un barco ({barco})!")
         else:
             print("¡Impacto!")
         return True
 
 def todas_naves_hundidas(tablero):
-    return all(celda in ['O', 'X', 'T'] for fila in tablero for celda en fila)
+    return all(celda in ['O', 'X', 'T'] for fila in tablero for celda in fila)
 
 def jugar_turno(nombre_jugador, tablero_enemigo):
     print(f"Turno de {nombre_jugador}.")
