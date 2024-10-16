@@ -1,3 +1,13 @@
+"""
+Uso de random: Utilizaba el módulo random para la colocación automática de barcos.
+
+Posicionamiento Automático: Los barcos se colocaban automáticamente en el tablero.
+
+Función principal main: Tenía una función main() para iniciar el juego.
+
+Barcos: Solo había 5 barcos con nombres repetidos en cada partida.
+
+Turnos: No se limpiaba la consola entre turnos ni se validaban las entradas de los jugadores de manera robusta. """
 import random
 import os
 from colorama import Fore, Style, init
