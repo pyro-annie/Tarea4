@@ -2,7 +2,7 @@
 #include <random>
 #include <iomanip>
 #include <vector>
-#include <string> // Para usar getline
+#include <string> 
 
 using namespace std;
 
