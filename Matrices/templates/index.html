@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulación de Votos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Simulación de Votos</h1>
-    <form method="post">
-        <label for="distritos">Número de Distritos:</label>
-        <input type="number" id="distritos" name="distritos" required>
-        <br>
-        <label for="candidatos">Número de Candidatos:</label>
-        <input type="number" id="candidatos" name="candidatos" required>
-        <br>
-        <button type="submit">Simular</button>
-    </form>
+    <main>
+        <h1>Simulación de Votos</h1>
+        <form method="post">
+            <label for="distritos">Número de Distritos:</label>
+            <input type="number" id="distritos" name="distritos" required>
+
+            <label for="candidatos">Número de Candidatos:</label>
+            <input type="number" id="candidatos" name="candidatos" required>
+
+            <button type="submit">Simular</button>
+        </form>
+    </main>
 </body>
 </html>
+
+
