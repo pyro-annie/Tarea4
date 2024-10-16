@@ -48,3 +48,38 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+""" Código Principal (app.py):
+
+Refactorizamos y optimizamos el código separando la lógica en funciones más pequeñas y descriptivas.
+
+Simplificamos la lógica de sumar votos y encontrar ganadores tanto para candidatos como para distritos.
+
+Eliminamos comentarios innecesarios para mayor claridad.
+
+Archivo de Plantilla resultados.html:
+
+Mejoramos el HTML para hacerlo más profesional y semántico.
+
+Creamos un archivo CSS separado (minimalist-styles.css) para aplicar estilos modernos y minimalistas.
+
+Añadimos un diseño de tablas más visual y bonito.
+
+Ajustamos el diseño para que comience desde el lado izquierdo, adaptado para mostrar grandes cantidades de datos.
+
+Archivo de Plantilla index.html:
+
+Mejoramos el HTML para hacerlo más profesional y semántico.
+
+Creamos un archivo CSS separado (minimalist-styles-index.css) para aplicar estilos similares a los de resultados.html.
+
+Centramos el contenido y eliminamos el fondo de color azul.
+
+Aseguramos que el formulario sea responsivo y con un diseño moderno.
+
+Archivos CSS:
+
+minimalist-styles.css: Estilos para resultados.html con un diseño minimalista, moderno y color azul profundo.
+
+minimalist-styles-index.css: Estilos para index.html con un diseño coherente, centrado y moderno. """
