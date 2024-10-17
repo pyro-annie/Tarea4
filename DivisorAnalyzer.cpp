@@ -42,7 +42,7 @@ int generarNumeroAleatorio(int min, int max) {
 }
 
 void imprimirResultados(const Divisores numeros[], int size) {
-    cout << BLUE << left << setw(10) << "Número" << " | " << setw(30) << "Divisores" << RESET << endl;
+    cout << BLUE << left << setw(10) << "Numero" << " | " << setw(30) << "Divisores" << RESET << endl;
     cout << CYAN << string(45, '-') << RESET << endl;
     for (int i = 0; i < size; ++i) {
         cout << GREEN << left << setw(10) << numeros[i].numero << " | ";
@@ -56,7 +56,7 @@ void imprimirResultados(const Divisores numeros[], int size) {
 bool preguntarContinuar() {
     string continuar;
     while (true) {
-        cout << MAGENTA << "¿Deseas ejecutar el programa nuevamente? (s/n): " << RESET;
+        cout << MAGENTA << "Deseas ejecutar el programa nuevamente? (s/n): " << RESET;
         getline(cin, continuar);
         if (continuar == "s" || continuar == "S" || continuar == "n" || continuar == "N") {
             break;
